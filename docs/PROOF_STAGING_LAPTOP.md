@@ -70,6 +70,22 @@ Tailscale:          100.104.118.105 (laptop-5l5l03ci)
 URL health (tailnet): http://100.104.118.105:4000/health
 ```
 
+## Metode akses demo yang dipilih: Tailscale (anggota join tailnet)
+
+Keputusan team (3 Sep 2026): anggota mengakses staging **langsung via Tailscale**, tanpa harus "lewat laptop host dulu" untuk tiap request.
+
+Cara anggota (dilakukan masing-masing sekali):
+
+1. Install Tailscale di perangkat.
+2. Login dengan akun dan join tailnet pemilik (`hylmig7@`). Owner meng-approve join sekali.
+3. Setelah join, akses langsung:
+   - Backend: `http://100.104.118.105:4000/api/v1`
+   - Health cek: `http://100.104.118.105:4000/health`
+
+Tidak ada proxy/hopping per request. Begitu anggota ada di tailnet yang sama, laptop server tampil sebagai host di `100.104.118.105` dan bisa dicapai langsung oleh setiap device.
+
+Catatan: seluruh layanan yang mau diakses anggota WAJIB bind `0.0.0.0` (bukan `127.0.0.1`) dan port-nya harus diizinkan di firewall Windows untuk `100.64.0.0/10`. Port `4000` sudah dibuka; saat layanan baru (dashboard, port lain) ingin diakses, tambahkan rule serupa.
+
 ## Masalah yang ditemukan
 
 1. **Port 2222 (WSL SSH langsung) timelout** karena portproxy Windows berisi rule lama yang menunjuk IP WSL yang sudah berubah (`connstate`: daftar v4tov4 kosong). IP WSL berubah tiap restart, sehingga kita perlu mengupdate portproxy atau memakai jalur `wsl ...` dari Windows.
@@ -81,6 +97,10 @@ URL health (tailnet): http://100.104.118.105:4000/health
 - Untuk DB:
   - pasang PostgreSQL di WSL, atau
   - pakai hosting DB terpisah agar tidak membebani laptop bila testing banyak.
-- Untuk produksi akhir (jika publik):
-  - gunakan VPS/cloud yang punya fixed IP + uptime lebih baik.
-- Laptop server dipakai untuk development/staging dan demo internal (tailnet), bukan satu-satunya production server.
+- Untuk produksi/demo yang tidak bergantung laptop host menyala:
+  - deploy backend + DB ke VPS/cloud dengan IP tetap (mis. `43.133.130.167`).
+- Metode akses utama saat ini (untuk demo tugas kuliah): **anggota join tailnet lalu buka URL langsung**. Flow yang perlu dipastikan saat demo:
+  1. Laptop host menyala dan WSL aktif (service `mobiljuragan-staging` berjalan).
+  2. Semua perangkat demo ada di tailnet yang sama.
+  3. Backend bind `0.0.0.0` dan port terbuka untuk `100.64.0.0/10`.
+  4. Health cek berhasil (`200`) sebelum demo dimulai.
