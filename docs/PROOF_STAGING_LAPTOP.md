@@ -86,6 +86,26 @@ Tidak ada proxy/hopping per request. Begitu anggota ada di tailnet yang sama, la
 
 Catatan: seluruh layanan yang mau diakses anggota WAJIB bind `0.0.0.0` (bukan `127.0.0.1`) dan port-nya harus diizinkan di firewall Windows untuk `100.64.0.0/10`. Port `4000` sudah dibuka; saat layanan baru (dashboard, port lain) ingin diakses, tambahkan rule serupa.
 
+## Metode akses alternatif: cloudflared (tunnel publik)
+
+Sebagai cadangan agar anggota/dosen tidak perlu install Tailscale, cloudflared dipasang di server WSL dan memforward port `4000` ke URL publik TryCloudflare.
+
+```text
+cloudflared: /usr/local/bin/cloudflared (2026.8.3)
+Systemd service: cloudflared-tunnel.service  (active, restart auto)
+URL publik (3 Sep 2026): https://writer-generation-lung-markets.trycloudflare.com
+```
+
+Proof (dari mesin lain via internet, dipaksa ke IP Cloudflare karena resolver lokal lambat):
+
+```text
+curl --resolve writer-generation-lung-markets.trycloudflare.com:443:104.16.230.132 \
+     https://writer-generation-lung-markets.trycloudflare.com/health
+HTTP 200  {"service":"mobiljuragan-staging-proof", ...}
+```
+
+Catatan penting soal DNS: hostname `*.trycloudflare.com` tervalidasi resolve oleh DNS publik (Cloudflare 1.1.1.1 dan Google 8.8.8.8 → 104.16.230.132/104.16.231.132). Namun resolver/router lokal di satu mesin test (192.168.111.1) sempat mengembalikan "Non-existent domain" hingga beberapa menit. Artinya URL publik ini bergantung pada DNS client; untuk demo sebaiknya memakai jaringan dengan resolver normal, atau beri jeda setelah tunnel dibuat.
+
 ## Masalah yang ditemukan
 
 1. **Port 2222 (WSL SSH langsung) timelout** karena portproxy Windows berisi rule lama yang menunjuk IP WSL yang sudah berubah (`connstate`: daftar v4tov4 kosong). IP WSL berubah tiap restart, sehingga kita perlu mengupdate portproxy atau memakai jalur `wsl ...` dari Windows.
