@@ -1,0 +1,270 @@
+VTK50017
+Desain UI dan UX
+Kontrak Kuliah, Deskripsi Mata Kuliah, & Modern UX Workflow 
+Course Structure
+3 SKS
+Case-Based Learning
+Teaching Team
+Citra Dewi Megawati, S.Sn., MT.
+Safitri Aprillia Putri, S.Sn, M.Ds
+Apriyanti, S.Kom., M.Kom.
+
+TODAY'S AGENDA
+01
+Pengenalan Mata Kuliah 
+Deskripsi, Capaian, & Luaran Produk. 
+02
+Kontrak Kuliah & Aturan 
+Presensi, Tata Tertib, & Skema Penilaian (CBL). 
+03
+Materi Sesi B 
+Modern UX Workflow, AI Assistance, & Problem Framing. 
+04
+Instruksi Tugas 1 
+Pembentukan Kelompok & Deliverables Minggu Depan. 
+
+Definisi & Deskripsi Mata Kuliah
+Mata kuliah 
+Desain UI UX membahas prinsip, elemen, metode, dan tahapan perancangan produk digital berupa
+Specializations
+✦Interactive Mobile Prototypes
+✦Advanced Design Systems
+Our Approach
+Collaborative Process
+Proses dikerjakan secara kolaboratif untuk menghasilkan produk digital yang fungsional, komunikatif, responsif, dan relevan dengan kebutuhan industri kreatif serta teknologi informasi.
+Key Objectives
+✔Functional & Communicative
+✔Creative & Highly Relevant
+
+METODE PEMBELAJARAN(CBL)
+Mata kuliah ini menggunakan metode Case-Based Learning (CBL) yang berfokus pada pemecahan masalah dunia nyata secara tim.
+01
+Tugas Harian: Progress mingguan & micro-presentations.
+02
+Tugas Besar: Proyek produk digital end-to-end (UTS & UAS).
+03
+Kehadiran: Kedisiplinan mengikuti sesi KBM.
+04
+Keaktiffan: Partisipasi dalam diskusi kelas & bedah desain.
+05
+Sikap: Profesionalisme, etika kerja tim, & ketepatan waktu.
+
+Kontrak Kuliah – Kehadiran & Ketepatan Waktu
+Ketentuan Dosen
+
+Kuliah ditiadakan jika dosen belum masuk 30 menit tanpa pemberitahuan dari jadwal yang telah ditentukan.
+
+Waktu pengganti (make-up class) akan dicarikan berdasarkan kesepakatan bersama.
+Ketentuan Mahasiswa
+
+Mahasiswa wajib masuk kelas maksimal 15 menit sebelum KBM dimulai.
+Syarat Kehadiran: Minimal 80% dari total 16x pertemuan untuk dapat mengikuti Ujian Akhir.
+Kurang dari 80% = Dianggap TIDAK LULUS / Tidak diperbolehkan ikut ujian.
+
+
+Kontrak Kuliah – Tata Tertib & Kanal Komunikasi
+01
+Presensi : Presensi dilakukan sebelum/sesudah KBM. Mahasiswa berhak mengingatkan dosen jika presensi belum dilakukan. 
+02
+Komunikasi: Seluruh komunikasi & perizinan wajib melalui WhatsApp Group.
+03
+Google Classroom Account: Mahasiswa wajib menggunakan nama panjang lengkap (sesuai akademik) pada akun Google Classroom. .
+04
+Mahasiswa wajib berpakaian rapi, sopan, dan berkerah.
+05
+🚨 Sanksi Pelanggaran: Dosen berhak mengeluarkan mahasiswa dari kelas atau tidak memberikan nilai pada tugas bersangkutan jika melanggar ketentuan akun/pakaian. 
+
+Kontrak Kuliah – Pengumpulan Tugas & Konsekuensi
+ASSIGNMENT SUBMISSION POLICY
+⏱️ POLICY 01
+Keterlambatan Tugas 
+Pengumpulan terlambat akan dikenakan pemotongan nilai akumulatif.
+❌ POLICY 02
+Terlambat (>5 Days)
+= Dosen berhak memberikan nilai 0 (tidak menerima tugas). 
+🤝 POLICY 03
+Deadline Extensions
+Perpanjangan deadline hanya berlaku jika ada kesepakatan sebelumnya. 
+⚠️ CRITICAL WARNING
+CRITICAL RULE
+Jika mahasiswa tidak mengerjakan/mengumpulkan tugas lebih dari 1 kali, maka besar kemungkinan TIDAK LULUS dari mata kuliah ini.
+
+Skema & Persentase Penilaian Akhir 
+70%
+Structured Tasks (CBL)
+Daily Tasks, Participation, Attitude, & Weekly Progress
+15%
+Midterm Exam (UTS)
+Interactive Mobile Prototype (Figma Variables & Logic)
+15%
+Final Exam (UAS)
+Capstone Case Study, WCAG/PDP Audit, & Handoff Spec
+
+RPS
+BAGIAN 1: MINGGU 1–8
+Target: Prototype Mobile High-Fidelity
+
+Minggu 1: Orientasi Mata Kuliah, Modern UX Workflow & Problem Framing
+Minggu 2: Information Architecture (IA) & Advanced User Flow
+Minggu 3: Laws of UX & Wireframing Low-Fidelity
+Minggu 4: Mobile Design System & Design Tokens Dasar
+Minggu 5: Desain UI High-Fidelity & Strategi UX Microcopy
+Minggu 6: Prototyping Figma Tingkat Lanjut (Variables & Conditionals)
+Minggu 7: Mikro-interaksi, Motion UX & Polishing
+Minggu 8: Ujian Tengah Semester (UTS) – Live Demo Prototype Interaktif
+BAGIAN 2: MINGGU 9–16
+Target: Audit Tingkat Lanjut, Handoff & Portofolio
+
+Minggu 9: Usability Testing (UT) Mobile & Analisis Evaluatif
+Minggu 10: Iterasi UX Berbasis Data & Google HEART Framework
+Minggu 11: Aksesibilitas Web & Aplikasi (a11y) – WCAG 2.2
+Minggu 12: UX Etis, Dark Patterns & Privasi Data
+Minggu 13: Ekstensi Responsif & Adaptasi Multi-Perangkat
+Minggu 14: DesignOps & Developer Handoff Tingkat Lanjut
+Minggu 15: UX Storytelling & Penyusunan Studi Kasus Portofolio
+Minggu 16: Ujian Akhir Semester (UAS) – Pameran Produk Capstone
+
+SESSION B – MODERN UX WORKFLOW
+THE FOCUS
+Modern UX & AI Assistance
+Bagaimana AI mengubah alur kerja Product Designer modern dari sekadar membuat visual menjadi pemecah masalah strategis. 
+Core Session Objectives >
+format_quote
+"Design is not just what it looks like and feels like. Design is how it works."
+— STEVE JOBS
+
+TRADITIONAL VS MODERN UX WORKFLOW
+UI/UX WORKFLOW COMPARISON
+CONVENTIONAL
+Traditional UX
+Proses Linear & Lambat: Riset manual mingguan - Wireframe -  UI Visual.
+Handoff Statis: Serah terima sarat dokumentasi melalui spesifikasi yang tebal dan kaku.
+Pengujian di Akhir: Validasi dan pengujian produk hanya dilakukan di tahap paling akhir.
+
+RECOMMENDED
+Modern UX
+Rapid Prototyping: Pendekatan iteratif berbasis hipotesis dengan siklus umpan balik (feedback loop) yang cepat.
+DesignOps: Integrasi langsung dan lancar dengan basis kode developer.
+Berbasis AI (AI-Powered): Memanfaatkan bantuan AI untuk memaksimalkan efisiensi alur kerja secara keseluruhan.
+
+
+THE ROLE OF AI IN DESIGN WORKFLOWS
+AI IN UX DESIGN WORKFLOW
+search
+Research & Synthesis
+Ekstraksi cepat wawasan kunci (key insights) dari transkrip wawancara pengguna.
+edit
+UX Copywriting
+Menghasilkan variasi microcopy, pesan kesalahan (error messages), dan teks onboarding.
+lightbulb
+Idea Generation
+Mengeksplorasi alternatif layout dan struktur awal wireframe.
+code
+Code & Tokens
+Menerjemahkan variables Figma menjadi Design Tokens (JSON/CSS).
+
+CORE CONCEPT
+PROBLEM FRAMING
+info
+Definition
+Proses mendefinisikan ulang masalah bisnis atau pengguna secara mendalam sebelum melompat ke pembuatan solusi visual.
+track_changes
+Goal
+Memastikan tim mendesain solusi yang tepat untuk masalah yang benar.
+format_quote
+Principle
+"Membuat antarmuka yang sangat indah untuk fitur yang tidak dibutuhkan pengguna adalah pemborosan sumber daya." 
+
+AVOIDING SOLUTION-FIRST BIAS
+PROBLEM-FIRST VS SOLUTION-FIRST
+INCORRECT
+Solution-First Bias
+cancel
+"Kita harus membuat fitur Chatbot AI di dalam aplikasi kita!"
+Langsung melompat ke fitur atau teknologi tanpa memahami secara mendalam masalah mendasar pengguna.
+RECOMMENDED
+Problem-First Framing
+check_circle
+"Pengguna kesulitan menemukan rincian transaksi dalam waktu 10 detik, sehingga CS menerima 500+ komplain setiap harinya."
+Berfokus penuh pada titik kendala (friction point) nyata pengguna, dampak bisnis yang terukur, dan validasi strategis.
+
+METODOLOGI UX RESEARCH & DESIGN
+UX PROBLEM STATEMENT FORMULA
+FORMULA STANDAR
+Struktur Dasar
+menu_book
+[Target Pengguna] mengalami [Masalah Spesifik] saat [Konteks/Situasi], yang mengakibatkan [Dampak Bisnis/Emosional]. 
+CONTOH KASUS
+Penerapan Praktis
+lightbulb
+"Ibu rumah tangga (pengguna aplikasi belanja harian) mengalami masalah stok barang habis secara tiba-tiba saat checkout, yang mengakibatkan tingkat pembatalan pesanan sebesar 25%."
+
+Metodologi UX Research & Design
+ANATOMY OF A USER PERSONA
+Profil representatif dari kelompok pengguna target utama untuk memandu keputusan desain:
+person
+Demographics
+Nama, Usia, Pekerjaan, dan Lokasi yang mendefinisikan latar belakang pengguna.
+flag
+Goals
+Apa yang ingin dicapai oleh pengguna dan motivasi utama yang mendorong mereka.
+report_problem
+Pain Points
+Hambatan besar, frustrasi, dan tantangan yang dihadapi pengguna saat ini.
+psychology
+Behavior
+Kebiasaan sehari-hari, alur kerja, dan aplikasi yang sering digunakan oleh pengguna.
+
+AI PROMPTING STRATEGY FOR RESEARCH
+PROMPT TEMPLATE
+PROMPT SYSTEM ROLE & CONTEXT
+"Bertindaklah sebagai Senior UX Researcher. Saya sedang merancang aplikasi mobile untuk [Kategori Produk]. 
+Buatkan 2 User Persona realistis yang mencakup komponen detail yang tercantum di sebelah kanan."
+REQUIRED PERSONA COMPONENTS
+01Demographic & Background
+02Core Goals & Needs
+03Pain Points & Frustrations
+04Behavioral Patterns
+
+PRACTICAL CASE STUDY
+CASE STUDY: PROBLEM TO PERSONA
+01. THE PROBLEM
+User Friction
+report_problem
+
+60% first-jobber gagal menabung karena antarmuka aplikasi keuangan terlalu rumit.
+02. USER PERSONA
+Target User
+person
+👤 Rian (23 thn, Junior Developer) – Membutuhkan cara cepat untuk mencatat pengeluaran tanpa grafik yang membingungkan.
+03. UX SOLUTION
+The Design
+check_circle
+One-tap expense logging langsung di dashboard utama demi kecepatan dan kejelasan.
+
+Metodologi UX Research & Design
+TUGAS 1: TUGAS KELOMPOK
+LANGKAH PENGERJAAN
+01. Bentuk kelompok kerja (2–3 per kelompok).
+02. Cari studi kasus real yang ada lapangan (Industri, Pemerintah, dinas, UMKM atau Desa) 
+03. Pilih 1 konsep produk aplikasi mobile (E-commerce, Fintech, Healthtech, Edutech) dan Dashboard Web (Desktop). 
+04. Rumuskan 1 UX Problem Statement utama.
+05. Buat 2 User Personas (Manfaatkan AI tools seperti ChatGPT/Claude/Perplexity).
+📁 FORMAT DELIVERABLE
+PDF Slide Deck (3–5 Pages)
+atau link Figma Board.
+⏰ DEADLINE 
+24 Jam Sebelum Pertemuan 2 
+Unggah di  Google Classroom
+
+Metodologi UX Research & Design
+TANYA JAWAB & PENUTUP
+DISKUSI & TANYA JAWAB
+
+01. Apakah ada pertanyaan terkait Kontrak Kuliah atau Tugas 1?
+
+02. Pengingat: Pastikan seluruh anggota kelas sudah bergabung di WhatsApp Group resmi.
+SEE YOU NEXT SESSION
+forum
+Session 2
+Information Architecture & Advanced User Flow

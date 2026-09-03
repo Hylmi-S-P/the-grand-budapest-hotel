@@ -1,0 +1,135 @@
+# =====================================================
+# .gitignore - MobilJuragan MVP monorepo
+# Tujuan: menjaga repo tetap kecil dan tidak memuat artefak
+# yang dapat di-regenerasi atau mengandung data sensitif.
+# =====================================================
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# --- VS Code / JetBrains / Cursor ---
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+
+# --- Reasonix / agent workspace (lokal, tidak untuk tim) ---
+reasonix.toml
+.reasonix/
+
+# --- Node / pnpm / yarn / npm ---
+node_modules/
+.pnpm-store/
+.yarn/cache
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+.npm/
+.yarn-integrity
+
+# --- Next.js / React / Web build artifacts ---
+.next/
+out/
+dist/
+build/
+.cache/
+.turbo/
+.turbo-cache/
+storybook-static/
+.vercel/
+.netlify/
+
+# --- Flutter / Dart ---
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+**/GeneratedPluginRegistrant.*
+*.iml
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/key.properties
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+linux/flutter/
+macos/Flutter/ephemeral/
+macos/Pods/
+windows/flutter/
+*.ipa
+*.app
+*.dSYM.zip
+*.dSYM
+
+# --- Express / TypeScript / Prisma ---
+services/api/dist/
+services/api/coverage/
+services/api/.turbo/
+**/*.tsbuildinfo
+
+# --- Prisma local data ---
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/dev/
+
+# --- PostgreSQL dump / local DB dumps ---
+*.sql
+*.dump
+*.backup
+*.bak
+
+# --- Env files (WAJIB di-ignore) ---
+.env
+.env.*
+!.env.example
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# --- Test / coverage ---
+coverage/
+*.lcov
+.nyc_output/
+
+# --- Secrets / key material ---
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets/
+.credentials/
+
+# --- Temporary AI / agent scratch ---
+*.tmp
+*~
+.cache/
+.temp/
+scratch/
+agent_tmp/
+reasonix_tmp/
+
+# =====================================================
+# File yang TETAP di-commit:
+# - docs/ (dokumentasi, MANIFEST, design tokens, figma-raw)
+# - .env.example (template env tanpa nilai)
+# =====================================================

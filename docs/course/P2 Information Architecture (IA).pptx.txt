@@ -1,0 +1,132 @@
+Information Architecture (IA)
+& Advanced User Flow
+(Primary Flow, Alternate Flow & Error Flow)
+Pertemuan Ke-2
+
+Apa Itu Information Architecture?
+
+adalah proses menyusun, mengorganisasi, dan mengelompokkan informasi dalam sebuah produk digital agar mudah ditemukan, dipahami, dan digunakan oleh pengguna.
+Sederhananya:
+IA = Bagaimana informasi dalam aplikasi disusun agar pengguna tidak tersesat.
+Information Architecture (IA)
+
+Mengapa 
+Information Architecture Penting?
+
+Bayangkan 
+sebuah aplikasi 
+memiliki banyak fitur:
+Jika semuanya ditampilkan tanpa struktur yang jelas, 
+pengguna akan merasa:
+
+"Aku harus klik yang mana?"
+
+IA membantu menjawab:
+
+Apa yang harus ditampilkan?
+Di mana informasi tersebut diletakkan?
+Informasi mana yang harus dikelompokkan?
+Bagaimana pengguna berpindah dari satu informasi ke informasi lain?
+
+
+Bagaimana informasi dikelompokkan.
+contoh:
+contoh:
+Bagaimana pengguna berpindah antar bagian.
+contoh
+A. Organization
+C. Navigation
+Bagaimana informasi diberi nama.
+Label harus mudah dipahami pengguna.
+
+B. Labeling
+Bagaimana pengguna menemukan informasi tertentu.
+D. Search
+Komponen Utama Information Architecture
+Contoh:
+❌ "Things You Might Like"
+vs.
+✅ "Rekomendasi"
+
+contoh
+Jika struktur informasi tidak jelas, 
+pengguna akan kesulitan menemukan produk, 
+melihat pesanan, atau melakukan pembayaran.
+Setelah membuat information architecture, kita dapat mulai membuat User Flow.>>>
+
+
+Apa Itu 
+User Flow?
+
+User Flow adalah gambaran langkah-langkah yang dilakukan pengguna untuk mencapai suatu tujuan dalam aplikasi atau website.
+
+Contoh tujuan:
+"Pengguna ingin membeli makanan."
+Jadi:
+IA menjelaskan struktur sistem.
+ User Flow menjelaskan perjalanan pengguna di dalam struktur tersebut.
+
+
+User Flow sederhana biasanya hanya menunjukkan: 
+Happy Path / Primary Flow
+
+Padahal dalam dunia nyata, pengguna tidak selalu mengikuti jalur ideal.
+
+Misalnya saat checkout:
+pengguna berhasil membayar
+pengguna salah memasukkan PIN
+saldo tidak cukup
+koneksi internet terputus
+pembayaran gagal
+pengguna membatalkan transaksi
+
+Oleh karena itu, dibagi menjadi 3 Jenis Flow:
+1. Primary Flow
+2. Alternate Flow
+3. Error Flow
+
+Dari Basic User Flow ke Advanced User Flow
+
+Primary Flow
+Primary Flow adalah jalur utama yang paling diharapkan terjadi ketika pengguna berhasil mencapai tujuannya.
+
+Sering disebut juga:
+Happy Path
+Main Flow
+Ideal Flow
+Contoh 
+Goal: Pengguna ingin 
+membeli tiket bioskop.
+*semuanya berjalan sesuai harapan.
+
+Alternate Flow
+Alternate Flow adalah jalur alternatif yang masih valid dan tetap memungkinkan pengguna mencapai tujuan.
+Contoh: 
+pengguna ingin membeli makanan.
+Primary:
+Alternate
+: pengguna bisa menemukan produk melalui Search.
+Keduanya benar.
+Bedanya hanya cara pengguna mencapai tujuan.
+
+Error Flow
+Error Flow adalah alur yang terjadi ketika terdapat kesalahan, kegagalan, atau kondisi tidak sesuai harapan.
+Contoh Error Flow
+Error Flow yang baik tidak hanya mengatakan:
+❌ "Error!"
+
+Tetapi memberikan informasi yang berguna:
+✅ "Password yang kamu masukkan salah. Coba lagi."
+
+Primary:
+Error:
+
+Buatlah :
+Information Architecture
+User Flow (lengkap)
+
+Sesuai dengan konsep yang telah disetujui di pertemuan sebelumnya
+TUGAS
+
+Terima
+Kasih

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://schemas.mobilejuragan.dev/tokens/v1",
+  "meta": {
+    "source": "Consolidated from DESIGN.md + observed Design System page (0:1) of MobilJuragan MVP — UI UX Case Study (Figma file key Rxdv5kRYC8NiQpdWJhoIGJ).",
+    "extraction_date": "2026-09-03",
+    "extraction_method": "Manual transcription from DESIGN.md (authoritative source) and structure confirmed via get_metadata on the Figma Design System page."
+  },
+  "color": {
+    "core": {
+      "navy":      { "value": "#1E3A5F", "role": "structure / header / primary button", "contrast_on_white": 9.10 },
+      "teal":      { "value": "#0E7C7B", "role": "positive action / active status / link", "contrast_on_white": 4.96 },
+      "neutral-bg":  { "value": "#F5F7FA", "role": "background" },
+      "neutral-line":{ "value": "#E2E8F0", "role": "border / divider" },
+      "text-main":   { "value": "#0F172A", "role": "primary text", "contrast_on_neutral_bg": 16.91 }
+    },
+    "accent": {
+      "gold": { "value": "#D4A017", "role": "attention only (max 1 occurrence per screen)", "usage": "menunggu konfirmasi / tarif belum final" }
+    },
+    "semantic": {
+      "status_available":  { "value": "#0E7C7B", "maps_to": "teal",   "label": "Tersedia" },
+      "status_rented":     { "value": "#1E3A5F", "maps_to": "navy",   "label": "Disewa" },
+      "status_service":    { "value": "#94A3B8", "maps_to": "slate-400", "label": "Servis" },
+      "status_pending":    { "value": "#D4A017", "maps_to": "gold",   "label": "Menunggu Konfirmasi" }
+    },
+    "antislop_rules": [
+      "Maksimal 2-3 core + 1 accent. Gold hanya satu per screen.",
+      "Tidak boleh gradient background, glow, glassmorphism, atau dekoratif tanpa alasan.",
+      "Teks putih di atas navy dan teal harus lolos WCAG AA (4.5:1 normal, 3:1 large 18px+)."
+    ]
+  },
+  "typography": {
+    "family": "Inter",
+    "scale": {
+      "h1":   { "size_mobile": "24px", "size_desktop": "32px", "weight": 600, "line_height": 32, "usage": "screen title" },
+      "h2":   { "size_mobile": "20px", "size_desktop": "24px", "weight": 600, "line_height": 28, "usage": "section title" },
+      "body": { "size": "14-16px",    "weight": 400, "line_height": 24 },
+      "label":{ "size": "14px",       "weight": 500, "line_height": 20, "source_node_id": "6:83" },
+      "caption": { "size": "12px",    "weight": 400, "line_height": 16 }
+    },
+    "rules": [
+      "Sentence case for headings. Avoid all-caps with wide letter-spacing.",
+      "Monospace tidak dipakai sebagai gaya visual; angka plat boleh diberi perlakuan data yang jelas."
+    ],
+    "node_ids_in_design_system": ["6:67 Type/H1", "6:71 Type/H2", "6:75 Type/Body", "6:79 Type/Body Small", "6:83 Type/Label", "6:87 Type/Caption"]
+  },
+  "spacing": {
+    "grid_unit": 8,
+    "scale": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48
+    },
+    "node_ids_in_design_system": ["6:94 xs", "6:97 sm", "6:100 md", "6:103 lg", "6:106 xl", "6:109 2xl"]
+  },
+  "radius": {
+    "scale": {
+      "sm": 4,
+      "md": 8,
+      "lg": 12
+    },
+    "usage": {
+      "radius_sm": "input, badge, chip",
+      "radius_md": "card, table",
+      "radius_lg": "primary CTA only (one intentional 'rounded' element)"
+    },
+    "node_ids_in_design_system": ["6:116 sm", "6:119 md", "6:122 lg"]
+  },
+  "elevation": {
+    "level_1": {
+      "shadow": "0 1px 3px rgba(15,23,42,.08)",
+      "usage": "kartu yang terangkat (terangkat dari latar)"
+    },
+    "level_2": {
+      "shadow": "0 4px 12px rgba(15,23,42,.14)",
+      "usage": "primary CTA dan modal"
+    },
+    "no_shadow": {
+      "usage": "baris tabel, input, list biasa — pakai border #E2E8F0"
+    },
+    "rule": "Maksimal 2 level elevasi. Kalau semua kartu mengambang, FAIL.",
+    "node_ids_in_design_system": ["6:129 Elevation/Resting card"]
+  },
+  "components": {
+    "button":          { "node_id": "8:10",  "primary_token": "navy",   "secondary_token": "teal-outline", "ghost_token": "text-only" },
+    "input":           { "node_id": "10:4",  "label_always_visible": true, "error_inline": true },
+    "badge":           { "node_id": "12:6",  "radius": "sm" },
+    "status_chip":     { "node_id": "12:15", "states": ["Tersedia", "Disewa", "Servis", "Menunggu Konfirmasi"] },
+    "vehicle_card":    { "node_id": "13:2",  "motif": "plat nomor", "radius": "md" },
+    "booking_card":    { "node_id": "147:457", "structure": ["pemesan", "kendaraan", "tanggal", "status", "aksi"] },
+    "stepper":         { "node_id": "13:71", "steps": ["Permintaan diterima", "Cek kendaraan", "Konfirmasi tarif", "Siap"] },
+    "modal":           { "node_id": "13:72", "closable": true, "elevation": "level_2" }
+  },
+  "data_integrity": {
+    "vehicles_allowed": [
+      { "name": "AVANZA G PUTIH",            "plate": "PS1692B" },
+      { "name": "FORTUNER VRZ TRD HITAM",   "plate": "B8833AKU" },
+      { "name": "HILUX G HITAM",            "plate": "PA8593GZ" },
+      { "name": "INNOVA REBORN G HITAM",    "plate": "PA1504G" },
+      { "name": "PICKUP SUZUKI CARRY HITAM", "plate": "B9762BAY" },
+      { "name": "RUSH G ALL NEW COKLAT",    "plate": "PA1696GG" },
+      { "name": "TERIOS X HIJAU MATIC",     "plate": "B2534KRB" },
+      { "name": "VELOZ MERAH",              "plate": "PS1693B" },
+      { "name": "XPANDER EXCEED HITAM",     "plate": "PS1691B" }
+    ],
+    "forbidden_to_fabricate": ["harga", "rating", "review", "testimoni", "pendapatan", "jumlah booking", "nama pelanggan fiktif", "waktu respons"],
+    "tariff_handling": "Tulis: 'Tarif dikonfirmasi tim MobilJuragan' atau 'Menunggu konfirmasi tarif'. Jangan hardcode angka."
+  },
+  "states": {
+    "empty":   "Sebab + satu aksi. Contoh: 'Belum ada mobil tersedia untuk tanggal ini. Coba tanggal lain.' + tombol.",
+    "loading": "Sebut apa yang dimuat. Contoh: 'Memuat daftar mobil...'",
+    "error":   "Apa yang gagal + langkah berikutnya. Contoh: 'Gagal memuat data. Periksa koneksi.' + 'Coba lagi'."
+  }
+}

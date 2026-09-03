@@ -1,0 +1,86 @@
+{
+  "project": "MobilJuragan MVP",
+  "figma_file": {
+    "name": "MobilJuragan MVP — UI UX Case Study",
+    "file_key": "Rxdv5kRYC8NiQpdWJhoIGJ",
+    "url": "https://www.figma.com/design/Rxdv5kRYC8NiQpdWJhoIGJ/MobilJuragan-MVP-%E2%80%94-UI-UX-Case-Study",
+    "extraction_date": "2026-09-03",
+    "extraction_method": "Figma MCP screenshot + get_metadata; tokens transcribed from DESIGN.md (authoritative) and confirmed against Design System page 0:1"
+  },
+  "pages": {
+    "mobile_app":      { "page_id": "4:10", "canvas_size": "390 x 844 per frame" },
+    "dashboard":       { "page_id": "4:11", "canvas_size": "1440 x 900 per frame" },
+    "design_system":   { "page_id": "0:1", "note": "Foundations, components, variants" }
+  },
+  "screens": {
+    "mobile_app": [
+      { "node_id": "16:4",    "name": "Screen / Home",                  "screenshot": "docs/figma-raw/mobile/home.png",                  "size": "390x844", "step_in_flow": 1 },
+      { "node_id": "16:48",   "name": "Screen / Available Vehicles",    "screenshot": "docs/figma-raw/mobile/available-vehicles.png",   "size": "390x844", "step_in_flow": 2 },
+      { "node_id": "16:147",  "name": "Screen / Vehicle Detail",         "screenshot": "docs/figma-raw/mobile/vehicle-detail.png",       "size": "390x844", "step_in_flow": 3 },
+      { "node_id": "17:70",   "name": "Screen / Date & Time",            "screenshot": "docs/figma-raw/mobile/date-time.png",            "size": "390x844", "step_in_flow": 4 },
+      { "node_id": "17:129",  "name": "Screen / Rental Options",         "screenshot": "docs/figma-raw/mobile/rental-options.png",       "size": "390x844", "step_in_flow": 5 },
+      { "node_id": "17:177",  "name": "Screen / Booker Form",            "screenshot": "docs/figma-raw/mobile/booker-form.png",          "size": "390x844", "step_in_flow": 6 },
+      { "node_id": "18:145",  "name": "Screen / Order Review",           "screenshot": "docs/figma-raw/mobile/order-review.png",         "size": "390x844", "step_in_flow": 7 },
+      { "node_id": "18:190",  "name": "Screen / Phone Verification",     "screenshot": "docs/figma-raw/mobile/phone-verification.png",   "size": "390x844", "step_in_flow": 8 },
+      { "node_id": "18:243",  "name": "Screen / Booking Status",         "screenshot": "docs/figma-raw/mobile/booking-status.png",       "size": "390x844", "step_in_flow": 9 },
+      { "node_id": "18:303",  "name": "Screen / Empty State",            "screenshot": "docs/figma-raw/mobile/empty-state.png",          "size": "390x844", "step_in_flow": "reference" },
+      { "node_id": "18:342",  "name": "Screen / Error State",            "screenshot": "docs/figma-raw/mobile/error-state.png",          "size": "390x844", "step_in_flow": "reference" },
+      { "node_id": "228:262", "name": "Screen / Help - New Ticket",      "screenshot": "docs/figma-raw/mobile/help-new-ticket.png",     "size": "390x844", "step_in_flow": "help/branch" },
+      { "node_id": "228:305", "name": "Screen / Help - Ticket Chat",     "screenshot": "docs/figma-raw/mobile/help-ticket-chat.png",    "size": "390x844", "step_in_flow": "help/branch" },
+      { "node_id": "273:336", "name": "Screen / Bantuan (FAQ)",          "screenshot": "docs/figma-raw/mobile/bantuan.png",              "size": "390x844", "step_in_flow": "help/entry" }
+    ],
+    "dashboard": [
+      { "node_id": "19:4",    "name": "Screen / Dashboard Overview",     "screenshot": "docs/figma-raw/dashboard/01-dashboard-overview.png",   "size": "1440x900", "nav_section": "Overview" },
+      { "node_id": "19:59",   "name": "Screen / Incoming Bookings",      "screenshot": "docs/figma-raw/dashboard/02-incoming-bookings.png",    "size": "1440x900", "nav_section": "Incoming Bookings" },
+      { "node_id": "19:112",  "name": "Screen / Booking Detail",         "screenshot": "docs/figma-raw/dashboard/03-booking-detail.png",       "size": "1440x900", "nav_section": "drill-in" },
+      { "node_id": "20:20",   "name": "Screen / Fleet Calendar",         "screenshot": "docs/figma-raw/dashboard/04-fleet-calendar.png",       "size": "1440x900", "nav_section": "Fleet Calendar" },
+      { "node_id": "20:142",  "name": "Screen / Vehicle Status",         "screenshot": "docs/figma-raw/dashboard/05-vehicle-status.png",       "size": "1440x900", "nav_section": "Vehicle Status" },
+      { "node_id": "20:180",  "name": "Screen / Booking Status Update",  "screenshot": "docs/figma-raw/dashboard/06-booking-status-update.png", "size": "1440x900", "nav_section": "drill-in" },
+      { "node_id": "20:225",  "name": "Screen / Empty State",            "screenshot": "docs/figma-raw/dashboard/07-empty-state.png",          "size": "1440x900", "nav_section": "reference" },
+      { "node_id": "20:251",  "name": "Screen / Error State",            "screenshot": "docs/figma-raw/dashboard/08-error-state.png",          "size": "1440x900", "nav_section": "reference" },
+      { "node_id": "228:411", "name": "Screen / Customer Care",          "screenshot": "docs/figma-raw/dashboard/09-customer-care.png",        "size": "1440x900", "nav_section": "Help" }
+    ]
+  },
+  "components": {
+    "foundations":    { "node_id": "4:12",   "screenshot": "docs/figma-raw/design-system/00-foundations.png",    "note": "Foundations overview (colors, typography, spacing, radius, elevation)" },
+    "button":         { "node_id": "8:10",   "screenshot": "docs/figma-raw/design-system/01-button.png",         "variants": ["primary", "secondary", "ghost"] },
+    "input":          { "node_id": "10:4",   "screenshot": "docs/figma-raw/design-system/02-input.png",          "states": ["default", "filled", "error"] },
+    "badge":          { "node_id": "12:6",   "screenshot": "docs/figma-raw/design-system/03-badge.png" },
+    "status_chip":    { "node_id": "12:15",  "screenshot": "docs/figma-raw/design-system/04-status-chip.png",   "states": ["Tersedia (teal)", "Disewa (navy)", "Servis (abu)", "Menunggu Konfirmasi (gold)"] },
+    "vehicle_card":   { "node_id": "13:2",   "screenshot": "docs/figma-raw/design-system/05-vehicle-card.png" },
+    "booking_card":   { "node_id": "147:457","screenshot": "docs/figma-raw/design-system/06-booking-card.png", "variants": ["Booking Card", "Booking Card/Variant3"] },
+    "stepper":        { "node_id": "13:71",  "screenshot": "docs/figma-raw/design-system/07-stepper.png",      "steps": ["Permintaan diterima", "Cek kendaraan", "Konfirmasi tarif", "Siap"] },
+    "modal":          { "node_id": "13:72",  "screenshot": "docs/figma-raw/design-system/08-modal.png" }
+  },
+  "flow_map": {
+    "mobile_booking_flow": [
+      "16:4 Home",
+      "16:48 Available Vehicles",
+      "16:147 Vehicle Detail",
+      "17:70 Date & Time",
+      "17:129 Rental Options",
+      "17:177 Booker Form",
+      "18:145 Order Review",
+      "18:190 Phone Verification",
+      "18:243 Booking Status"
+    ],
+    "mobile_help_branch": [
+      "273:336 Bantuan (FAQ)",
+      "228:262 Help - New Ticket",
+      "228:305 Help - Ticket Chat"
+    ],
+    "dashboard_navigation": [
+      "19:4 Dashboard Overview",
+      "19:59 Incoming Bookings -> 19:112 Booking Detail -> 20:180 Booking Status Update",
+      "20:20 Fleet Calendar",
+      "20:142 Vehicle Status",
+      "228:411 Customer Care"
+    ],
+    "status_references": ["18:303 Empty State", "18:342 Error State", "20:225 Empty State", "20:251 Error State"]
+  },
+  "extraction_limitations": [
+    "Kode referensi (HTML/JSX) per frame TIDAK bisa diekstrak: tool get_design_context butuh layer yang sedang dipilih di Figma desktop pengguna. Dev perlu coding manual dari screenshot + tokens + DESIGN.md.",
+    "get_metadata sempat memotong Dashboard page dari top-level listing saat pertama dipanggil; diselesaikan dengan direct call nodeId 4:11.",
+    "Daftar node id di CONTEXT_DUMP_semut_copilot_vscode.md sudah outdated untuk Dashboard (5 screen tambahan yaitu Fleet Calendar, Vehicle Status, Booking Status Update, Empty State, Error State, Customer Care tidak ada di sana)."
+  ]
+}
