@@ -1,0 +1,15 @@
+packages:
+  - "apps/*"
+  - "services/*"
+  - "packages/*"
+
+# pnpm ≥10 mem-block build scripts dependency secara default demi keamanan
+# ("Ignored build scripts"). Prisma 7 & esbuild/unrs membutuhkan postinstall
+# (generate/download engine). Approval dicatat via `pnpm approve-builds`,
+# direpresentasikan di sini sebagai `allowBuilds` (schema pnpm 11).
+# Sesuaikan hanya bila team yakin; jangan sekadar approve semua dependency.
+allowBuilds:
+  "@prisma/engines": true
+  prisma: true
+  esbuild: true
+  "unrs-resolver": true

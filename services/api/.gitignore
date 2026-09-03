@@ -1,0 +1,7 @@
+# services/api — build & runtime artifacts
+dist/
+
+# Prisma — migration .db hanya bila memakai sqlite utk dev; schema dipakai postgres.
+# (Jika suatu saat memakai SQLite dev lokal, aktifkan aturan ini:
+#  prisma/dev.db
+# )
