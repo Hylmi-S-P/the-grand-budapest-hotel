@@ -124,3 +124,40 @@ Catatan penting soal DNS: hostname `*.trycloudflare.com` tervalidasi resolve ole
   2. Semua perangkat demo ada di tailnet yang sama.
   3. Backend bind `0.0.0.0` dan port terbuka untuk `100.64.0.0/10`.
   4. Health cek berhasil (`200`) sebelum demo dimulai.
+
+## Status akhir eksplorasi (3 Sep 2026)
+
+### Keputusan team
+
+1. **Metode kerja staging harian: Tailscale only (privat).** Semua anggota dev akses via `100.104.118.105:4000`. Tidak ada jalur publik untuk kerja harian.
+2. **cloudflared (tunnel publik) dimatikan** sampai project benar-benar jalan dan butuh demo jarak jauh. Service di-`stop` + `disable` agar tidak nyala otomatis; binary dan unit file tetap ada di server sehingga mudah diaktifkan kembali saat demo online.
+3. **Pembagian deploy final (rencana):**
+   - Flutter → di-build jadi APK/AAB, install di device/emulator. Tidak perlu deploy ke server.
+   - Dashboard (Next.js) → Vercel (URL https stabil) sebagai jalur utama untuk demo dari luar; opsi lokal `localhost:3000` sebagai cadangan offline.
+   - Backend (Express) + DB (PostgreSQL) → di server. Untuk tahap produksi/demo mandiri tanpa laptop nyala: VPS ber-IP tetap (mis. `43.133.130.167`).
+
+### Security posture saat ini (staging lokal)
+
+| Lapisan | Status |
+|---|---|
+| Backend port 4000 | Hanya tailnet `100.64.0.0/10` (firewall Windows) |
+| SSH | Key-only, user terbatas |
+| Tunnel publik | **OFF** (di-disable; nyalakan hanya saat demo online) |
+| Data | Hanya data contoh; belum ada PII pelanggan asli |
+| Repo GitHub (public) | Tanpa `.env`, tanpa secret — WAJIB dijaga seterusnya |
+
+### Checklist keamanan berulang selama development
+
+- [ ] Jangan commit `.env` / credential ke repo public.
+- [ ] PostgreSQL (5432) jangan pernah di-expose ke publik; hanya API yang bicara ke DB.
+- [ ] cloudflared hanya dinyalakan saat demo jarak jauh, matikan setelah selesai.
+- [ ] Backup DB sebelum demo besar.
+- [ ] Health check `http://100.104.118.105:4000/health` = 200 sebelum demo.
+
+### Cara mengaktifkan kembali tunnel publik (saat project jalan)
+
+```bash
+# di WSL (via ssh ke Windows host lalu wsl)
+systemctl enable --now cloudflared-tunnel
+journalctl -u cloudflared-tunnel -n 50   # ambil URL https://xxx.trycloudflare.com
+```
