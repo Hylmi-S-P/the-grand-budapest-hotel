@@ -13,6 +13,7 @@ export default defineConfig({
   schema: 'prisma/schema.prisma',
   migrations: {
     path: 'prisma/migrations',
+    seed: 'tsx prisma/seed.ts',
   },
   // migrate dev / db push memakai koneksi langsung dari URL ini (dari prisma.config →
   // engine pakai direct URL). Query runtime memakai adapter ('migrate.adapter').

@@ -1,14 +1,17 @@
 import express, { type Express, type Request, type Response } from 'express';
+import cors from 'cors';
 import { logger } from './logger.js';
+import { v1Router } from './routes/v1/index.js';
+import { errorHandler } from './middleware/errorHandler.js';
 
 export const app: Express = express();
 
-// JSON body parsing. (Helmet/CORS/rate-limit diterapkan ketika auth & internet-facing dirancang — roadmap M5+.)
+// Middleware dasar
+app.use(cors());
 app.use(express.json());
 
 /**
- * Health/liveness check — tidak membutuhkan DB agar bisa dipakai di M3 (repository foundation).
- * Business logic & DB-aware endpoints menyusul di milestone-nya masing-masing.
+ * Health/liveness check — tidak membutuhkan DB agar bisa dipakai di monitoring & staging.
  */
 app.get('/health', (_req: Request, res: Response) => {
   res.json({
@@ -19,15 +22,21 @@ app.get('/health', (_req: Request, res: Response) => {
   });
 });
 
-// Catch-all untuk rute yang belum diimplementasikan — jangan sampai mengklaim selesai.
+// REST API v1
+app.use('/api/v1', v1Router);
+
+// Catch-all 404 untuk rute yang belum terdaftar
 app.use((req: Request, res: Response) => {
   res.status(404).json({
     error: {
       code: 'ROUTE_NOT_FOUND',
-      message: `Route ${req.method} ${req.path} belum diimplementasikan pada milestone ini.`,
+      message: `Route ${req.method} ${req.path} tidak ditemukan.`,
       details: {},
     },
   });
 });
 
-logger.info('Express app configured.');
+// Global Error Handler
+app.use(errorHandler);
+
+logger.info('Express app configured with CORS, /api/v1 routes, and error handler.');

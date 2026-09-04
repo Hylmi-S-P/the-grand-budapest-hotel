@@ -1,0 +1,250 @@
+openapi: 3.0.3
+info:
+  title: MobilJuragan REST API
+  description: >
+    Dokumentasi resmi API MobilJuragan (CV. Mobil Juragan Express Transport, Merauke, Papua Selatan).
+    Menjadi single source of truth untuk client Customer Mobile (Flutter) dan Admin Dashboard (Next.js).
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/api/v1
+    description: Development server lokal
+  - url: http://100.104.118.105:4000/api/v1
+    description: Staging server laptop via Tailscale
+
+paths:
+  /auth/otp/request:
+    post:
+      summary: Meminta kode verifikasi OTP (Customer)
+      description: Menghasilkan kode OTP 6-digit untuk nomor telepon pelanggan (masa berlaku 5 menit). Hash disimpan di database.
+      tags:
+        - Customer Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - phoneNumber
+              properties:
+                phoneNumber:
+                  type: string
+                  example: "081234567890"
+                  description: Nomor telepon Indonesia (diawali 08, 62, atau +62)
+                fullName:
+                  type: string
+                  example: "Budi Santoso"
+                  description: Nama lengkap calon pelanggan (opsional jika sudah terdaftar)
+                purpose:
+                  type: string
+                  default: CUSTOMER_LOGIN
+                  example: "CUSTOMER_LOGIN"
+      responses:
+        '200':
+          description: OTP berhasil dikirim
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardResponse'
+        '400':
+          description: Validasi nomor telepon gagal
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /auth/otp/verify:
+    post:
+      summary: Verifikasi kode OTP (Customer)
+      description: Memverifikasi kode OTP 6-digit. Jika valid, menerbitkan token JWT customer.
+      tags:
+        - Customer Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - phoneNumber
+                - otp
+              properties:
+                phoneNumber:
+                  type: string
+                  example: "081234567890"
+                otp:
+                  type: string
+                  example: "123456"
+                  description: 6 digit angka kode OTP
+                purpose:
+                  type: string
+                  default: CUSTOMER_LOGIN
+      responses:
+        '200':
+          description: Verifikasi berhasil dan token diterbitkan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                      user:
+                        $ref: '#/components/schemas/User'
+        '400':
+          description: Kode OTP salah atau kedaluwarsa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '429':
+          description: Batas percobaan OTP terlampaui (maksimal 5 kali)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /admin/auth/login:
+    post:
+      summary: Login Staf / Admin
+      description: Autentikasi untuk staf operasional dan administrator menggunakan sandi terenkripsi.
+      tags:
+        - Admin Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - phoneNumber
+                - password
+              properties:
+                phoneNumber:
+                  type: string
+                  example: "081234567890"
+                password:
+                  type: string
+                  example: "Admin123!"
+      responses:
+        '200':
+          description: Login berhasil, log audit dicatat, dan token JWT admin diterbitkan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                      user:
+                        $ref: '#/components/schemas/User'
+        '401':
+          description: Kredensial tidak valid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /admin/auth/me:
+    get:
+      summary: Informasi Profil Staf/Admin
+      description: Mengambil data pengguna staf atau admin yang saat ini login.
+      tags:
+        - Admin Auth
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Profil admin aktif
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        $ref: '#/components/schemas/User'
+        '401':
+          description: Belum terautentikasi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Akses ditolak (bukan role ADMIN atau STAFF)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        fullName:
+          type: string
+          example: "Budi Santoso"
+        phoneNumber:
+          type: string
+          example: "081234567890"
+        role:
+          type: string
+          enum: [CUSTOMER, STAFF, ADMIN]
+          example: CUSTOMER
+
+    StandardResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        data:
+          type: object
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          required:
+            - code
+            - message
+            - details
+          properties:
+            code:
+              type: string
+              example: VALIDATION_ERROR
+            message:
+              type: string
+              example: "Format data tidak valid."
+            details:
+              type: object
+              additionalProperties: true
