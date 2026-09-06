@@ -38,6 +38,7 @@ docs/
 ├── MANIFEST.json                # Peta node id → screenshot
 ├── design-tokens.json           # Tokens (warna, tipografi, spacing, dll)
 ├── PLANNING_TECH_STACK_DAN_ROADMAP.md  # Tech stack, MVP scope, dan roadmap tim
+├── TECH_PLANNING_AI_CHATBOT_HANDOFF_EDGE_CASES.md  # Perencanaan arsitektur & edge cases AI chat handoff
 ├── TEAM_WORK_ALLOCATION.md            # Pembagian kerja 4 PIC dan rotasi reviewer
 ├── TEAM_POLICY_AI-ASSISTED_DEVELOPMENT.md  # Aturan kontribusi AI untuk tim
 ├── LOGBOOK_AI_ASSISTED_TEMPLATE.md    # Template entry logbook (wajib dipakai team)
