@@ -43,12 +43,15 @@ stateDiagram-v2
      - Tombol aksi utama: **`[Ambil Alih Chat]`** (warna Navy/Teal).
 2. **`WAITING_HUMAN` (Eskalasi / Menunggu Admin)**
    - Terpicu secara otomatis ketika AI mendeteksi kebutuhan admin manusia atau customer meminta bantuan manusia.
-   - **Tindakan Sistem:**
-     - AI Bot otomatis **di-mute / dimatikan** (`isAiActive = false`).
-     - Kartu tiket di daftar tiket kiri (`Screen / Customer Care`) memunculkan **Badge Merah** di pojok kanan atas.
-     - Tiket berpindah ke antrean teratas tab *"Perlu Tindakan / Menunggu Respon"*.
-     - Sound/Browser notification berbunyi untuk staf operasional.
-     - Chat composer admin otomatis **TERBUKA (*Unlocked*)**.
+   - **Proses Transisi Halus (*Graceful Handoff Flow* — AI Tidak Berhenti Tiba-Tiba):**
+     1. **Pesan Penutup/Transisi AI ke Customer:** AI **TIDAK langsung diam/senyap begitu saja** agar customer tidak mengira chat macet/rusak. AI mengirim satu pesan transisi terakhir ke room chat pelanggan:
+        > *"Baik, untuk kendala/pertanyaan ini sedang saya teruskan kepada staf admin operasional kami. Mohon ditunggu sebentar ya, admin manusia akan segera membalas di sini."*
+     2. **Penonaktifan Bot:** Setelah pesan transisi terkirim, barulah bot AI di-mute (`isAiActive = false`) agar tidak lagi menyela obrolan.
+     3. **Aktivasi Dashboard Admin:**
+        - Kartu tiket di daftar kiri (`Screen / Customer Care`) menyalakan **Badge Merah** di pojok kanan atas.
+        - Tiket dipindahkan ke urutan teratas antrean *"Perlu Tindakan / Menunggu Respon"*.
+        - Input text composer admin otomatis **TERBUKA (*Unlocked*)** sehingga admin bisa langsung membalas.
+        - Notifikasi browser/suara berbunyi di dashboard staf operasional.
 3. **`AGENT_HANDLING` (Sedang Ditangani Staf)**
    - Staf admin telah mengambil alih atau mengirim pesan balasan pertama.
    - Status tiket berubah menjadi `IN_PROGRESS` dengan `assignedAdminId = currentUserId`.
@@ -89,6 +92,7 @@ Mengacu pada screenshot Figma `docs/figma-raw/dashboard/09-customer-care.png`:
 | 4 | **Admin Mengembalikan Chat ke AI (*Handback to Bot*)** | Setelah admin menjawab kendala khusus (misal: konfirmasi sewa), customer hanya bertanya jam buka kantor (FAQ umum). | Sediakan tombol di menu aksi tiket: **`[Kembalikan ke AI Bot]`**. Saat diklik, `isAiActive` kembali `true`, composer admin terkunci kembali, dan banner sistem ditampilkan: *"Chat dikembalikan ke AI Bot"*. |
 | 5 | **Customer Menutup Aplikasi Mobile Saat Menunggu** | Admin membalas setelah 5 menit, namun customer sudah keluar dari layar chat/aplikasi. | Integrasi Push Notification (FCM). Jika `isCustomerOnline == false` saat admin membalas, backend mentrigger push notification ke perangkat Flutter customer: *"Admin MobilJuragan membalas tiket Anda: [kutipan pesan]"*. |
 | 6 | **Intent Flapping (False Positives)** | Customer hanya bercanda atau mengetik "makasih mas admin bot", AI salah mengira itu permintaan manusia. | Gunakan 2-layer Intent Validation: (1) Reranker score + Confidence score, (2) Jika ambigu, AI mengirimkan tombol konfirmasi: *"Apakah Anda ingin saya hubungkan dengan staf kami? [Ya, Hubungkan] [Tidak, Lanjut Chat]"*. |
+| 7 | **Silent Drop vs Graceful Transition (AI Menghilang Tiba-Tiba)** | Jika handoff dipicu dan AI mendadak bungkam tanpa pesan, customer merasa aplikasi error, jaringan putus, atau pesannya tidak terbaca. | Sistem wajib memicu **Pesan Transisi Eksplisit** dari AI (*"Baik, pertanyaan Anda sedang saya teruskan ke admin operasional kami. Mohon tunggu sebentar ya..."*) sebelum socket/service AI melepaskan hak jawab (*mute*). Dengan begitu, customer tenang mengetahui bahwa sistem sedang menghubungkan ke manusia. |
 
 ---
 
