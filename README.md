@@ -55,17 +55,17 @@ pnpm lint
 pnpm dev          # keduanya sekaligus (konkuren)
 ```
 
-## Database & Prisma (status jujur)
+## Database & Prisma
 
 - Provider: **PostgreSQL 18 lokal (FlyEnv)** di workstation dev — role & DB
-  `mobiljuragan` dibuat untuk Prisma.
+  `mobiljuragan` dibuat untuk Prisma. Bisa pake selain FlyEnv cuma dari laptop ku (hylmi) inisiasi awal pake FlyEnv.
 - Prisma **7** dengan `@prisma/adapter-pg`; connection ditangani di
   `services/api/prisma.config.ts`, bukan di schema (`datasource.url` dihapus Prisma 7).
 - Migration `20260903153842_init` **sudah diterapkan** (8 tabel domain) — lihat
   `services/api/README.md` untuk detail & cara reproduce di mesin lain.
 - Detail endpoint business menyusul milestone M5+; **belum ada** endpoint selain `/health`.
 
-## Developer flow (agar aman & tidak menipu "done")
+## Developer flow
 
 - Secret hanya di `.env` lokal (`.env` ter-ignore; `.env.example` di-commit tanpa nilai nyata).
 - Setiap milestone ditandai `done` **hanya setelah ada evidence** — lihat
